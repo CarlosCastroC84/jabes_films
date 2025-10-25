@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Encuentra reseñas, tendencias y recomendaciones de cine recientes.">
+    <meta name="keywords" content="peliculas, cine, reseñas, tendencias, estrenos, favoritos">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JabesFilms</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/logo.gif" alt="JabesFilms logo" data-logo="desktop">
+                            <img src="img/logo2.gif" alt="JabesFilms logo alternativo" data-logo="mobile">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-8">
+                    <div class="header__nav">
+                        <a href="#" class="search-switch header__search-mobile d-lg-none" aria-label="Abrir buscador"><span class="icon_search"></span></a>
+                        <button class="header__toggle d-lg-none" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Abrir menú">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav class="header__menu collapse d-lg-block" id="siteNav">
+                            <ul>
+                                <li class="active"><a href="./index.html">Inicio</a></li>
+                                <li><a href="./categories.html">Categorías</a></li>
+                                <li><a href="./favorites.html">Favoritas</a></li>
+                                <li><a href="./blog.html">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch" aria-label="Abrir buscador"><span class="icon_search"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <a href="#" class="scroll-top" data-scroll-top aria-label="Volver al inicio">
+        <span class="scroll-top__icon"><i class="fa fa-angle-up"></i></span>
+    </a>
+
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__slider owl-carousel" data-hero-slider>
+                <!-- Películas destacadas generadas dinámicamente -->
+            </div>
+            <a href="#explorar" class="hero__scroll" aria-label="Ir a la sección de exploración">
+                <span class="hero__scroll__icon">
+                    <i class="fa fa-angle-down"></i>
+                </span>
+                <span class="hero__scroll__label">Descubrir más</span>
+            </a>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Toolbox Section Begin -->
+    <section class="movie-toolbox" id="explorar">
+        <div class="container">
+            <div class="movie-toolbox__inner">
+                <div class="movie-toolbox__intro">
+                    <h3>Encuentra tu próxima película</h3>
+                    <p>Consulta estrenos recientes, filtra por género o año y arma tu lista de favoritas.</p>
+                </div>
+                <form class="movie-toolbox__filters" data-filters-form>
+                    <div class="movie-toolbox__field">
+                        <label for="movie-search-input">Buscar</label>
+                        <input type="search" id="movie-search-input" placeholder="Título, actor o palabra clave">
+                    </div>
+                    <div class="movie-toolbox__field">
+                        <label for="genre-filter">Género</label>
+                        <select id="genre-filter" data-plain-select>
+                            <option value="all">Todos los géneros</option>
+                        </select>
+                    </div>
+                    <div class="movie-toolbox__field">
+                        <label for="year-filter">Año</label>
+                        <select id="year-filter" data-plain-select>
+                            <option value="all">Cualquier año</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Toolbox Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad" id="lista">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-title">
+                        <h4>Últimas reseñas publicadas</h4>
+                    </div>
+                    <div class="movie-results__meta">
+                        <span data-results-count>0 películas disponibles</span>
+                        <button type="button" class="primary-btn primary-btn--outline" data-reset-filters>Limpiar filtros</button>
+                    </div>
+                    <div class="row movie-grid" data-movie-grid>
+                        <!-- Cards creadas por JavaScript -->
+                    </div>
+                    <div class="movie-grid__empty" data-empty-state>
+                        <h5>No encontramos películas con esos filtros.</h5>
+                        <p>Prueba con otros términos o vuelve a mostrar todos los géneros y años.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4" id="tendencias">
+                    <div class="product__sidebar">
+                        <div class="product__sidebar__view">
+                            <div class="section-title">
+                                <h5>Tendencias</h5>
+                            </div>
+                            <div class="movie-trending" data-trending-list>
+                                <!-- Entradas de tendencias -->
+                            </div>
+                        </div>
+                        <div class="product__sidebar__comment" id="favoritos">
+                            <div class="section-title">
+                                <h5>Mis favoritas</h5>
+                            </div>
+                            <div class="movie-favorites" data-favorites-list>
+                                <!-- Favoritos guardados -->
+                            </div>
+                            <p class="movie-favorites__empty" data-favorites-empty>
+                                Aún no agregas favoritas. Pulsa el ícono de corazón en cualquier película para guardarla.
+                            </p>
+                            <button type="button" class="primary-btn primary-btn--small" data-clear-favorites>
+                                Vaciar favoritas
+                            </button>
+                            <a class="movie-favorites__cta" href="./favorites.html">Ver todas mis favoritas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton" aria-label="Volver arriba"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="img/logo.gif" alt="JabesFilms logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a href="./index.html">Inicio</a></li>
+                            <li><a href="#explorar">Explorar</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="#favoritos">Favoritos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <p>
+                        ©<script>document.write(new Date().getFullYear());</script> JabesFilms. Creador de reseñas y tendencias de cine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Buscar una película...">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/movies-data.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

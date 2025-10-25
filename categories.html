@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explora las películas de JabesFilms organizadas por género.">
+    <meta name="keywords" content="categorias, generos, peliculas, jabesfilms">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JabesFilms | Categorías</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/logo.gif" alt="JabesFilms logo" data-logo="desktop">
+                            <img src="img/logo2.gif" alt="JabesFilms logo alternativo" data-logo="mobile">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-8">
+                    <div class="header__nav">
+                        <a href="#" class="search-switch header__search-mobile d-lg-none" aria-label="Abrir buscador"><span class="icon_search"></span></a>
+                        <button class="header__toggle d-lg-none" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Abrir menú">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav class="header__menu collapse d-lg-block" id="siteNav">
+                            <ul>
+                                <li><a href="./index.html">Inicio</a></li>
+                                <li class="active"><a href="./categories.html">Categorías</a></li>
+                                <li><a href="./favorites.html">Favoritas</a></li>
+                                <li><a href="./blog.html">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch" aria-label="Abrir buscador"><span class="icon_search"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Inicio</a>
+                        <span>Categorías de películas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Categories Section Begin -->
+    <section class="categories spad">
+        <div class="container">
+            <div class="row">
+                <aside class="col-lg-3">
+                    <div class="categories__sidebar">
+                        <h4>Géneros</h4>
+                        <ul class="categories__list" data-genre-list>
+                            <!-- Generos generados por JavaScript -->
+                        </ul>
+                    </div>
+                </aside>
+                <div class="col-lg-9">
+                    <div class="categories__content">
+                        <div class="categories__header">
+                            <div>
+                                <h3 data-category-title>Todos los géneros</h3>
+                                <p class="categories__subtitle" data-category-description>
+                                    Descubre las películas disponibles agrupadas por género dentro de nuestro catálogo.
+                                </p>
+                            </div>
+                            <div class="categories__stats">
+                                <span data-category-count>0 películas</span>
+                                <select data-sort-select data-plain-select>
+                                    <option value="recent">Más recientes</option>
+                                    <option value="rating">Mejor valoradas</option>
+                                    <option value="alpha">Orden alfabético</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row movie-grid" data-category-grid>
+                            <!-- Tarjetas generadas por JavaScript -->
+                        </div>
+                        <div class="categories__empty" data-category-empty>
+                            <h4>No hay películas para este género todavía.</h4>
+                            <p>Prueba seleccionando otra categoría o vuelve pronto para ver nuevos estrenos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton" aria-label="Volver arriba"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="img/logo.gif" alt="JabesFilms logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li><a href="./index.html">Inicio</a></li>
+                            <li class="active"><a href="./categories.html">Categorías</a></li>
+                            <li><a href="./favorites.html">Favoritas</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <p>
+                        ©<script>document.write(new Date().getFullYear());</script> JabesFilms. Explorando estrenos por género.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Buscar una película...">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/movies-data.js"></script>
+    <script src="js/categories.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

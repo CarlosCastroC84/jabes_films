@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 900">
+  <defs>
+    <linearGradient id="posterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d1f3d" />
+      <stop offset="50%" stop-color="#27254a" />
+      <stop offset="100%" stop-color="#3b2c56" />
+    </linearGradient>
+    <linearGradient id="posterHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.35)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="900" fill="url(#posterGradient)" />
+  <rect width="600" height="280" fill="url(#posterHighlight)" />
+  <g fill="rgba(255,255,255,0.1)">
+    <path d="M70 820h460v8H70z" />
+    <path d="M70 790h460v8H70z" />
+    <path d="M70 760h320v8H70z" />
+    <path d="M70 730h280v8H70z" />
+  </g>
+  <g font-family="'Oswald', sans-serif" text-anchor="middle">
+    <text x="300" y="380" font-size="42" fill="rgba(255,255,255,0.85)" letter-spacing="6">JABESFILMS</text>
+    <text x="300" y="440" font-size="18" fill="rgba(255,255,255,0.55)" letter-spacing="4">PELÍCULA</text>
+    <text x="300" y="500" font-size="28" fill="rgba(229,54,55,0.9)" letter-spacing="8">PROXIMAMENTE</text>
+  </g>
+</svg>

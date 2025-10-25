@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Detalle y reseñas de una película en JabesFilms.">
+    <meta name="keywords" content="pelicula, reseña, sinopsis, elenco, comentarios">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JabesFilms | Detalle de película</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html">
+                            <img src="img/logo.gif" alt="JabesFilms logo" data-logo="desktop">
+                            <img src="img/logo2.gif" alt="JabesFilms logo alternativo" data-logo="mobile">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-8">
+                    <div class="header__nav">
+                        <a href="#" class="search-switch header__search-mobile d-lg-none" aria-label="Abrir buscador"><span class="icon_search"></span></a>
+                        <button class="header__toggle d-lg-none" type="button" data-toggle="collapse" data-target="#siteNav" aria-controls="siteNav" aria-expanded="false" aria-label="Abrir menú">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav class="header__menu collapse d-lg-block" id="siteNav">
+                            <ul>
+                                <li><a href="./index.html">Inicio</a></li>
+                                <li><a href="./categories.html">Categorías</a></li>
+                                <li><a href="./favorites.html">Favoritas</a></li>
+                                <li><a href="./blog.html">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-2">
+                    <div class="header__right">
+                        <a href="#" class="search-switch" aria-label="Abrir buscador"><span class="icon_search"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links" data-breadcrumb>
+                        <a href="./index.html"><i class="fa fa-home"></i> Inicio</a>
+                        <a href="./index.html#lista">Películas</a>
+                        <span data-breadcrumb-title>Detalle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <section class="movie-detail-hero set-bg" data-hero-background data-image-type="backdrop">
+        <div class="container">
+            <div class="movie-detail-hero__overlay">
+                <div class="movie-detail-hero__meta">
+                    <span class="movie-detail-hero__genre" data-hero-genres></span>
+                    <span class="movie-detail-hero__year" data-hero-year></span>
+                </div>
+                <h1 class="movie-detail-hero__title" data-hero-title>Detalle de película</h1>
+                <p class="movie-detail-hero__tagline" data-hero-tagline></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Detail Section Begin -->
+    <section class="movie-detail spad">
+        <div class="container">
+            <div class="movie-detail__content" data-movie-content>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="movie-detail__poster set-bg" data-movie-poster data-image-type="poster">
+                            <button type="button" class="movie-detail__favorite" data-favorite-button>
+                                <i class="fa fa-heart-o"></i>
+                                <span>Agregar a favoritas</span>
+                            </button>
+                        </div>
+                        <div class="movie-detail__rating">
+                            <div class="movie-detail__rating__value" data-movie-rating>0.0</div>
+                            <span data-movie-rating-count>Basado en 0 reseñas</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="movie-detail__header">
+                            <h2 data-movie-title>Nombre de la película</h2>
+                            <span class="movie-detail__original" data-movie-original-title></span>
+                            <ul class="movie-detail__meta">
+                                <li><span>Estreno</span><strong data-movie-release></strong></li>
+                                <li><span>Duración</span><strong data-movie-runtime></strong></li>
+                                <li><span>Géneros</span><strong data-movie-genres></strong></li>
+                            </ul>
+                            <p data-movie-synopsis>
+                                Sinopsis de la película. Será reemplazada con la información real.
+                            </p>
+                            <div class="movie-detail__actions">
+                                <a href="#" class="primary-btn" data-trailer-button target="_blank" rel="noopener">
+                                    Ver tráiler
+                                </a>
+                                <a href="#comentarios" class="primary-btn primary-btn--outline">
+                                    Ir a comentarios
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row movie-detail__body">
+                    <div class="col-lg-8">
+                        <section class="movie-detail__section">
+                            <h3>Sinopsis</h3>
+                            <p data-movie-synopsis-full>
+                                Un viaje narrativo que se actualizará según la película seleccionada.
+                            </p>
+                        </section>
+
+                        <section class="movie-detail__section">
+                            <h3>Reparto destacado</h3>
+                            <ul class="movie-detail__cast" data-movie-cast>
+                                <!-- Lista de actores -->
+                            </ul>
+                        </section>
+
+                        <section class="movie-detail__section movie-detail__section--video">
+                            <h3>Tráiler oficial</h3>
+                            <div class="movie-detail__video" data-trailer-container>
+                                <iframe data-trailer-embed src="" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                            </div>
+                        </section>
+
+                        <section class="movie-detail__section" id="comentarios">
+                            <h3>Comentarios de la comunidad</h3>
+                            <div class="movie-comments" data-comments-list>
+                                <!-- Comentarios existentes -->
+                            </div>
+                            <div class="movie-comments__empty" data-comments-empty>
+                                Sé la primera persona en compartir una reseña sobre esta película.
+                            </div>
+                            <form class="movie-comments__form" data-comment-form>
+                                <h5>Agregar comentario</h5>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" name="author" placeholder="Tu nombre" required>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <select name="rating" required>
+                                            <option value="">Calificación</option>
+                                            <option value="5">5 - Excelente</option>
+                                            <option value="4">4 - Muy buena</option>
+                                            <option value="3">3 - Buena</option>
+                                            <option value="2">2 - Regular</option>
+                                            <option value="1">1 - Mala</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <textarea name="content" placeholder="Comparte tu opinión" rows="4" required></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="site-btn">Publicar comentario</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                    <div class="col-lg-4">
+                        <aside class="movie-detail__aside">
+                            <h5>Ficha técnica</h5>
+                            <ul class="movie-detail__facts">
+                                <li><span>Estudios:</span><strong data-movie-studios></strong></li>
+                                <li><span>Calificación:</span><strong data-movie-rating-label></strong></li>
+                                <li><span>Valoración:</span><strong data-movie-rating-score></strong></li>
+                                <li><span>Duración:</span><strong data-movie-runtime-aside></strong></li>
+                            </ul>
+                        </aside>
+                        <aside class="movie-detail__aside">
+                            <h5>En tendencia</h5>
+                            <div class="movie-detail__aside__list" data-related-movies>
+                                <!-- Películas relacionadas -->
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-detail__error" data-error-state>
+                <h2>Ups, no encontramos esta película.</h2>
+                <p>Regresa al <a href="./index.html">inicio</a> para seguir explorando reseñas.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Movie Detail Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton" aria-label="Volver arriba"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="./index.html"><img src="img/logo.gif" alt="JabesFilms logo"></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li><a href="./index.html">Inicio</a></li>
+                            <li><a href="./index.html#explorar">Explorar</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./index.html#favoritos">Favoritos</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <p>
+                        ©<script>document.write(new Date().getFullYear());</script> JabesFilms. Reseñas colaborativas de cine.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Buscar una película...">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/movies-data.js"></script>
+    <script src="js/details.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
