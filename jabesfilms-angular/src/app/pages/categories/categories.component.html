@@ -1,0 +1,72 @@
+<section class="categories spad">
+  <div class="container">
+    <div class="row">
+      <aside class="col-lg-3">
+        <div class="categories__sidebar">
+          <h4>Géneros</h4>
+          <ul class="categories__list">
+            <li *ngFor="let genre of genres">
+              <button
+                type="button"
+                class="categories__list__item"
+                [ngClass]="{ 'is-active': selectedGenre === genre }"
+                (click)="selectGenre(genre)"
+              >
+                {{ genre === 'all' ? 'Todos' : genre }}
+              </button>
+            </li>
+          </ul>
+        </div>
+      </aside>
+      <div class="col-lg-9">
+        <div class="categories__content">
+          <div class="categories__header">
+            <div>
+              <h3>{{ currentGenreLabel }}</h3>
+              <p class="categories__subtitle">
+                Descubre las películas disponibles agrupadas por género dentro de nuestro catálogo.
+              </p>
+            </div>
+            <div class="categories__stats">
+              <span>{{ filteredMovies.length }} {{ filteredMovies.length === 1 ? 'película' : 'películas' }}</span>
+              <select [ngModel]="sortMode" (ngModelChange)="changeSort($event)">
+                <option value="recent">Más recientes</option>
+                <option value="rating">Mejor valoradas</option>
+                <option value="alpha">Orden alfabético</option>
+              </select>
+            </div>
+          </div>
+          <div class="row movie-grid">
+            <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let movie of filteredMovies; trackBy: trackById">
+              <article class="movie-card">
+                <div
+                  class="movie-card__poster product__item__pic set-bg"
+                  [style.background-image]="'url(' + movie.poster + ')'"
+                >
+                  <div class="movie-card__badge">
+                    <i class="fa fa-star"></i> {{ movie.rating | number:'1.1-1' }}
+                  </div>
+                </div>
+                <div class="product__item__text">
+                  <ul>
+                    <li>{{ movie.releaseDate | date:'yyyy' }}</li>
+                    <li>{{ movie.genres.slice(0, 2).join(', ') }}</li>
+                  </ul>
+                  <h5><a [routerLink]="['/favorites']">{{ movie.title }}</a></h5>
+                  <p>{{ movie.synopsis }}</p>
+                  <a class="movie-card__link" [routerLink]="['/favorites']">
+                    Ver reseña completa <span class="fa fa-angle-right"></span>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="categories__empty" *ngIf="!filteredMovies.length">
+            <h4>No hay películas para este género todavía.</h4>
+            <p>Prueba seleccionando otra categoría o vuelve pronto para ver nuevos estrenos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

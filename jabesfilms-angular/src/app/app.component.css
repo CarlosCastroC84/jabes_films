@@ -1,0 +1,42 @@
+:host {
+  display: block;
+  min-height: 100%;
+}
+
+main {
+  min-height: calc(100vh - 200px);
+  display: block;
+}
+
+.header__menu {
+  position: relative;
+}
+
+.header__menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+@media (max-width: 991px) {
+  .header__menu {
+    display: none;
+  }
+
+  .header__menu.is-open {
+    display: block;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 0;
+    background: rgba(12, 16, 38, 0.95);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .header__menu.is-open ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

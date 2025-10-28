@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Reseñas recientes y artículos destacados de cine en JabesFilms.">
-    <meta name="keywords" content="blog, reseñas, cine, estrenos, jabesfilms">
+    <meta name="description" content="Ponte en contacto con el equipo de JabesFilms.">
+    <meta name="keywords" content="contacto, jabesfilms, soporte, preguntas">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JabesFilms | Blog de reseñas</title>
+    <title>JabesFilms | Contáctenos</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="css/plyr.css" type="text/css">
     <link rel="stylesheet" href="css/nice-select.css" type="text/css">
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -55,8 +54,8 @@
                                 <li><a href="./index.html">Inicio</a></li>
                                 <li><a href="./categories.html">Categorías</a></li>
                                 <li><a href="./favorites.html">Favoritas</a></li>
-                                <li class="active"><a href="./blog.html">Blog</a></li>
-                                <li><a href="./contact.html">Contáctenos</a></li>
+                                <li><a href="./blog.html">Blog</a></li>
+                                <li class="active"><a href="./contact.html">Contáctenos</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -71,38 +70,88 @@
     </header>
     <!-- Header End -->
 
-    <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="img/placeholders/backdrop-default.svg" data-image-type="backdrop">
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="normal__breadcrumb__text">
-                        <h2>Blog de reseñas</h2>
-                        <p>Lo más reciente en cine, recomendaciones y análisis de nuestro equipo.</p>
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Inicio</a>
+                        <span>Contáctenos</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Normal Breadcrumb End -->
+    </div>
+    <!-- Breadcrumb End -->
 
-    <!-- Blog Section Begin -->
-    <section class="blog spad">
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
         <div class="container">
-            <div class="blog__intro">
-                <h3>Publicaciones recientes</h3>
-                <p>Actualizamos este espacio con comentarios y reseñas cortas de las películas más comentadas del momento.</p>
-            </div>
-            <div class="row" data-blog-grid>
-                <!-- Artículos generados por JavaScript -->
-            </div>
-            <div class="blog__empty" data-blog-empty>
-                <h4>No hemos publicado reseñas aún.</h4>
-                <p>Vuelve más tarde para descubrir nuevos comentarios o visita la <a href="./index.html">página principal</a>.</p>
+            <div class="contact__wrapper">
+                <article class="contact__intro">
+                    <span class="contact__subtitle">Soporte personalizado</span>
+                    <h2>¿Cómo podemos ayudarte?</h2>
+                    <p>
+                        Cuéntanos tu inquietud y uno de los miembros del equipo de JabesFilms se pondrá en contacto
+                        contigo. También puedes comunicarte directamente a través de nuestros canales oficiales.
+                    </p>
+                    <div class="contact__info">
+                        <article class="contact__info__item">
+                            <span class="contact__info__icon"><i class="fa fa-envelope"></i></span>
+                            <div class="contact__info__body">
+                                <h6>Correo</h6>
+                                <a href="mailto:soporte@jabesfilms.com">soporte@jabesfilms.com</a>
+                            </div>
+                        </article>
+                        <article class="contact__info__item">
+                            <span class="contact__info__icon"><i class="fa fa-phone"></i></span>
+                            <div class="contact__info__body">
+                                <h6>Teléfono</h6>
+                                <a href="tel:+573000000000">+57 300 000 0000</a>
+                            </div>
+                        </article>
+                        <article class="contact__info__item">
+                            <span class="contact__info__icon"><i class="fa fa-map-marker"></i></span>
+                            <div class="contact__info__body">
+                                <h6>Oficina</h6>
+                                <p>Cra. 00 #00-00, Bogotá, Colombia</p>
+                            </div>
+                        </article>
+                    </div>
+                </article>
+                <article class="contact__form-card">
+                    <form class="contact__form">
+                        <div class="contact__form__grid">
+                            <label class="contact__field">
+                                <span>Nombre completo</span>
+                                <input type="text" placeholder="Tu nombre" required>
+                            </label>
+                            <label class="contact__field">
+                                <span>Correo electrónico</span>
+                                <input type="email" placeholder="tunombre@correo.com" required>
+                            </label>
+                            <label class="contact__field contact__field--full">
+                                <span>Asunto</span>
+                                <input type="text" placeholder="Motivo del mensaje" required>
+                            </label>
+                            <label class="contact__field contact__field--full">
+                                <span>Mensaje</span>
+                                <textarea rows="4" placeholder="Cuéntanos en qué podemos apoyarte" required></textarea>
+                            </label>
+                        </div>
+                        <button type="submit" class="primary-btn">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                    <p class="contact__note">
+                        Atención de lunes a viernes de 8:00 a.m. a 6:00 p.m. (GMT-5).
+                    </p>
+                </article>
             </div>
         </div>
     </section>
-    <!-- Blog Section End -->
+    <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -122,14 +171,14 @@
                             <li><a href="./index.html">Inicio</a></li>
                             <li><a href="./categories.html">Categorías</a></li>
                             <li><a href="./favorites.html">Favoritas</a></li>
-                            <li class="active"><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contáctenos</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li class="active"><a href="./contact.html">Contáctenos</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <p>
-                        ©<script>document.write(new Date().getFullYear());</script> JabesFilms. Noticias y reseñas de cine.
+                        ©<script>document.write(new Date().getFullYear());</script> JabesFilms. Explorando estrenos por género.
                     </p>
                 </div>
             </div>
@@ -156,7 +205,6 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/movies-data.js"></script>
-    <script src="js/blog.js"></script>
     <script src="js/main.js"></script>
 </body>
 

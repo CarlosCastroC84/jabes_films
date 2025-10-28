@@ -1,0 +1,49 @@
+<section class="favorites spad">
+  <div class="container">
+    <div class="favorites__header">
+      <div>
+        <h3>Películas guardadas</h3>
+        <p class="favorites__subtitle">Sincronizamos tus favoritas en este equipo usando almacenamiento local.</p>
+      </div>
+      <div class="favorites__actions">
+        <span>{{ favoriteMovies.length }} títulos</span>
+      </div>
+    </div>
+
+    <div class="row movie-grid" *ngIf="favoriteMovies.length; else emptyState">
+      <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let movie of favoriteMovies; trackBy: trackById">
+        <article class="movie-card">
+          <div
+            class="movie-card__poster product__item__pic set-bg"
+            [style.background-image]="'url(' + movie.poster + ')'"
+          >
+            <div class="movie-card__badge"><i class="fa fa-star"></i> {{ movie.rating | number:'1.1-1' }}</div>
+            <button
+              type="button"
+              class="movie-card__favorite is-favorite"
+              (click)="removeFavorite(movie)"
+              aria-label="Quitar de favoritas"
+            >
+              <i class="fa fa-heart"></i>
+            </button>
+          </div>
+          <div class="product__item__text">
+            <ul>
+              <li>{{ movie.releaseDate | date:'yyyy' }}</li>
+              <li>{{ movie.genres.slice(0, 2).join(', ') }}</li>
+            </ul>
+            <h5><a [routerLink]="['/categories']">{{ movie.title }}</a></h5>
+            <p>{{ movie.synopsis }}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+    <ng-template #emptyState>
+      <div class="favorites__empty">
+        <h4>Aún no tienes favoritas guardadas.</h4>
+        <p>Vuelve a la <a routerLink="/">página principal</a> y marca con el corazón las películas que te interesen.</p>
+        <a class="primary-btn" routerLink="/categories">Descubrir películas</a>
+      </div>
+    </ng-template>
+  </div>
+</section>

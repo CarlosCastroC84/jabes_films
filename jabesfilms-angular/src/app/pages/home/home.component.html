@@ -1,0 +1,183 @@
+<section class="hero" *ngIf="featuredMovies.length">
+  <div class="container">
+    <div class="hero__slider">
+      <article
+        class="hero__items set-bg"
+        [style.background-image]="'url(' + featuredMovies[0].backdrop + ')'"
+      >
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="hero__text">
+              <div class="label">{{ featuredMovies[0].genres.slice(0, 2).join(' · ') }}</div>
+              <h2>{{ featuredMovies[0].title }}</h2>
+              <p>{{ featuredMovies[0].tagline || featuredMovies[0].synopsis }}</p>
+              <ul class="hero__meta">
+                <li><i class="fa fa-calendar"></i> {{ featuredMovies[0].releaseDate | date:'yyyy' }}</li>
+                <li><i class="fa fa-clock-o"></i> {{ featuredMovies[0].runtime }} min</li>
+                <li><i class="fa fa-star"></i> {{ featuredMovies[0].rating | number:'1.1-1' }}</li>
+              </ul>
+              <a [routerLink]="['/favorites']">
+                <span>Ver reseña</span> <i class="fa fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <a class="hero__scroll" aria-label="Ir a la sección de exploración" (click)="scrollToExplore()">
+      <span class="hero__scroll__icon">
+        <i class="fa fa-angle-down"></i>
+      </span>
+      <span class="hero__scroll__label">Descubrir más</span>
+    </a>
+  </div>
+</section>
+
+<section class="movie-toolbox" id="explorar">
+  <div class="container">
+    <div class="movie-toolbox__inner">
+      <div class="movie-toolbox__intro">
+        <h3>Encuentra tu próxima película</h3>
+        <p>Consulta estrenos recientes, filtra por género o año y arma tu lista de favoritas.</p>
+      </div>
+      <form class="movie-toolbox__filters" (submit)="$event.preventDefault()">
+        <div class="movie-toolbox__field">
+          <label for="movie-search-input">Buscar</label>
+          <input
+            type="search"
+            id="movie-search-input"
+            placeholder="Título, actor o palabra clave"
+            [(ngModel)]="searchTerm"
+            name="searchTerm"
+            (ngModelChange)="applyFilters()"
+          />
+        </div>
+        <div class="movie-toolbox__field">
+          <label for="genre-filter">Género</label>
+          <select
+            id="genre-filter"
+            [(ngModel)]="selectedGenre"
+            name="selectedGenre"
+            (change)="applyFilters()"
+          >
+            <option *ngFor="let genre of genres" [value]="genre.value">{{ genre.label }}</option>
+          </select>
+        </div>
+        <div class="movie-toolbox__field">
+          <label for="year-filter">Año</label>
+          <select
+            id="year-filter"
+            [(ngModel)]="selectedYear"
+            name="selectedYear"
+            (change)="applyFilters()"
+          >
+            <option *ngFor="let year of years" [value]="year.value">{{ year.label }}</option>
+          </select>
+        </div>
+        <button type="button" class="primary-btn primary-btn--outline" (click)="clearFilters()">
+          Limpiar filtros
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="product spad" id="lista">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="section-title">
+          <h4>Últimas reseñas publicadas</h4>
+        </div>
+        <div class="movie-results__meta">
+          <span>{{ filteredMovies.length }} películas disponibles</span>
+        </div>
+        <div class="row movie-grid">
+          <div class="col-lg-6 col-md-6 col-sm-6" *ngFor="let movie of filteredMovies; trackBy: trackById">
+            <article class="movie-card">
+              <div
+                class="movie-card__poster product__item__pic set-bg"
+                [style.background-image]="'url(' + movie.poster + ')'"
+              >
+                <div class="movie-card__badge">
+                  <i class="fa fa-star"></i> {{ movie.rating | number:'1.1-1' }}
+                </div>
+                <button
+                  type="button"
+                  class="movie-card__favorite"
+                  [ngClass]="{ 'is-favorite': isFavorite(movie) }"
+                  (click)="toggleFavorite(movie)"
+                  [attr.aria-label]="isFavorite(movie) ? 'Quitar de favoritas' : 'Agregar a favoritas'"
+                >
+                  <i class="fa" [ngClass]="isFavorite(movie) ? 'fa-heart' : 'fa-heart-o'"></i>
+                </button>
+              </div>
+              <div class="product__item__text">
+                <ul>
+                  <li>{{ movie.releaseDate | date:'yyyy' }}</li>
+                  <li>{{ movie.genres.slice(0, 2).join(', ') }}</li>
+                </ul>
+                <h5><a [routerLink]="['/favorites']">{{ movie.title }}</a></h5>
+                <p>{{ movie.synopsis }}</p>
+                <a class="movie-card__link" [routerLink]="['/favorites']">
+                  Ver reseña completa <span class="fa fa-angle-right"></span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="movie-grid__empty" *ngIf="!filteredMovies.length">
+          <h5>No encontramos películas con esos filtros.</h5>
+          <p>Prueba con otros términos o vuelve a mostrar todos los géneros y años.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <aside class="product__sidebar">
+          <section class="product__sidebar__view">
+            <div class="section-title">
+              <h5>Tendencias</h5>
+            </div>
+            <div class="movie-trending">
+              <article
+                class="product__sidebar__view__item set-bg"
+                *ngFor="let movie of trendingMovies; let i = index; trackBy: trackById"
+                [style.background-image]="'url(' + movie.backdrop + ')'"
+              >
+                <div class="movie-trending__rank">#{{ i + 1 }}</div>
+                <div class="movie-trending__meta">
+                  <h5><a [routerLink]="['/favorites']">{{ movie.title }}</a></h5>
+                  <span>{{ movie.releaseDate | date:'yyyy' }} · {{ movie.genres.slice(0, 2).join(', ') }}</span>
+                </div>
+              </article>
+            </div>
+          </section>
+          <section class="product__sidebar__comment" id="favoritos">
+            <div class="section-title">
+              <h5>Mis favoritas</h5>
+            </div>
+            <div class="movie-favorites">
+              <div class="movie-favorites__item" *ngFor="let movie of favoriteMovies; trackBy: trackById">
+                <div
+                  class="movie-favorites__thumb set-bg"
+                  [style.background-image]="'url(' + movie.poster + ')'"
+                ></div>
+                <div class="movie-favorites__info">
+                  <ul>
+                    <li>{{ movie.releaseDate | date:'yyyy' }}</li>
+                    <li>{{ movie.genres[0] }}</li>
+                  </ul>
+                  <h5><a [routerLink]="['/favorites']">{{ movie.title }}</a></h5>
+                  <span><i class="fa fa-star"></i> {{ movie.rating | number:'1.1-1' }}</span>
+                </div>
+              </div>
+              <p class="movie-favorites__empty" *ngIf="!favoriteMovies.length">
+                Aún no agregas favoritas. Pulsa el ícono de corazón en cualquier película para guardarla.
+              </p>
+              <a class="movie-favorites__cta" routerLink="/favorites">Ver todas mis favoritas</a>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

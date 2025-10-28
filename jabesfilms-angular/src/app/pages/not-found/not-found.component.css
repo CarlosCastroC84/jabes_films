@@ -1,0 +1,8 @@
+.movie-detail__error {
+  padding: 120px 0;
+}
+
+.movie-detail__error h2 {
+  font-size: 68px;
+  margin-bottom: 10px;
+}
